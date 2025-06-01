@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,include
 from .views import index, detail, delete, create, update
 
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
     path('<post_id>', detail, name='details'),
     path('<post_id>/delete', delete, name='delete'),
     path('<post_id>/edit', update, name='update'),
+    path('api/',include('api.urls'))
 ]
